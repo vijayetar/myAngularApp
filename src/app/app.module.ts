@@ -1,22 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms';
+// import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses.component';
-import { CourseComponent } from './course/course.component';
-import {CoursesService} from './courses.service';
 
+import {ServerComponent} from './server/server.component';
+import { ServersComponent } from './servers/servers.component';
+import { GreenComponent } from './green/green.component';
+import { RedComponent } from './red/red.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    CourseComponent
+    ServerComponent,
+    ServersComponent,
+    GreenComponent,
+    RedComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    // HttpModule
   ],
-  providers: [CoursesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
