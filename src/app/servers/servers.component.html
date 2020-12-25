@@ -1,12 +1,18 @@
-<label>Server Name</label>
+<label>Enter Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<button class="btn btn-secondary"
+[disabled]="checkIfEmptyString()"
+(click)="userName=''">Enter</button>
+<h1 *ngIf="userName">Welcome {{userName}}</h1>
+<br>
+<label>Enter Server Name</label>
 <input type="text"
 class="form-control"
-(input)="onUpdateServerName($event)">
+[(ngModel)]="serverName">
 <button class="btn btn-primary"
 [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server
 </button>
 <h1>{{serverCreateStatus}}</h1>
-<h2>{{serverName}}</h2>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngFor="let server of servers; let i = index">{{i}}<app-server></app-server>
+</p>
